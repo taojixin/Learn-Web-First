@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="box">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="demo">
+        <span class="erweima">*</span>
+    </div>
+    <script>
+        var erweima = document.querySelector('.erweima');
+        var box = document.querySelector('.box');
+        console.log(erweima.parentNode);//返回demo父节点，返回的是整个<div class="demo">包括里面的子级<span class="erweima">*</span>
+        console.log(box.parentNode);//返回body
+    </script>
+</body>
+</html>

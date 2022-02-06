@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div class="weather">？z
+        <h1>今天天气:{{weather}}</h1>
+        <button @click='changeweather'>改变天气</button>
+    </div>
+    <script>
+        Vue.config.productionTip = false;//阻止提示
+        new Vue({
+            el:'.weather',
+            data: {
+                isfo: false,
+            },
+            methods: {
+                changeweather(){
+                    this.isfo = !this.isfo
+                }
+            },
+            computed:{
+                weather(){
+                    return this.isfo ? '炎热' : '凉爽'
+                }
+            },
+            watch:{
+                // isfo:{
+                //     handler(oldvalue,newvalue){
+                //         console.log(oldvalue,newvalue);
+                //     }
+                // }
+                weather:{
+                    handler(oldvalue,newvalue){
+                        console.log(oldvalue,newvalue);
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

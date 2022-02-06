@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 3.实现绿色div块向下运动，在距离顶部400px处停下来。 -->
+    <style>
+        div{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            animation-name: move;  /*动画名称*/
+            animation-duration:5s;/*持续时间*/
+            animation-fill-mode:forwards;/* 停止后保持原位置 */
+        }
+        @keyframes move{
+            form{
+                top: 0px;
+            }
+            to{
+                transform: translateY(400px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

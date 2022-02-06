@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1、统计字符串"Where there is a will there is a way "中有多少个单词。 -->
+    <script>
+        var str = 'Where there is a will there is a way ';
+        var n = 0;
+        for(var i = 0;i < str.length;i++){
+            if(str.charAt(i) == ' '){
+                n++;
+            }
+        }
+        document.write("共有" + n + "个单词")
+
+    </script>
+</body>
+</html>

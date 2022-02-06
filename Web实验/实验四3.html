@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("../image/9.jpg") no-repeat center;
+    /*设置图片适应整个页面*/
+    background-size: 100% 100%;
+    background-attachment:fixed;
+}
+
+.reg_back {
+    /*设置整体的尺寸、背景色、边距等*/
+    width: 900px;
+    height: 400px;
+    border: 8px solid #eeeeee;
+    background: white;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.reg_left {
+    /*设置左浮动和外边距*/
+    float: left;
+    margin: 10px;
+}
+
+.reg_left > p:first-child {
+    /*设置段落（新用户注册）颜色和字体大小*/
+    color: yellow;
+    font-size: 20px;
+}
+
+.reg_left > p:last-child {
+    /*设置段落（USER REGISTER）颜色和字体大小*/
+    color: #A6A6A6;
+    font-size: 20px;
+}
+
+.reg_center {
+    /*设置中间的各种输入框等*/
+    float: left;
+    width: 500px;
+}
+
+.reg_right {
+    /*设置右边段落浮动和外间距*/
+    float: right;
+    margin: 30px;
+}
+
+.reg_right > p:first-child {
+    font-size: 15px;
+}
+
+.reg_right p a {
+    /*设置超链接（立即登录）颜色*/
+    color: crimson;
+}
+
+.td_left {
+    /*设置表单中字体对齐方式和宽度、高度*/
+    width: 100px;
+    text-align: right;
+    height: 40px;
+}
+
+.td_right {
+    /*设置输入框内边距*/
+    padding-left: 40px;
+}
+
+#username ,#password,#Email, #rename ,#Telphone,#Birthday,#checkcode{
+    /*设置输入框大小和边框*/
+    width: 220px;
+    height: 30px;
+    border: 1px solid #A4A4A4;
+    /* 设置边框为圆角 */
+    border-radius: 8px;
+    padding-left: 10px;
+}
+#checkcode{
+    /*验证码宽度*/
+    width: 120px;
+}
+#img_check{
+    /*验证码图片*/
+    vertical-align: middle;
+    height: 30px;
+    width: 95px;
+}
+#btn_sub{
+    /*注册按钮*/
+    background: lime;
+    width: 100px;
+    height: 40px;
+    border: 1px solid lime ;
+}
+.error{
+    color:red;
+}
+#td_sub{
+    padding-left: 150px;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="reg_back">
+        <div class="reg_left">
+            <p>新用户注册</p>
+            <p>USER REGISTER</p>
+        </div>
+        <div class="reg_center">
+            <div class="reg_form">
+                <form action="#" method="post" id="form">
+                    <table>
+                        <tr>
+                            <td class="td_left"><label for="username">用户名</label></td>
+                            <td class="td_right"><input type="text" name="username" placeholder="请输入用户名(英文字符或数字)"
+                                                        id="username">
+                                <span id="s_username" class="error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td_left"><label for="password">密码</label></td>
+                            <td class="td_right"><input type="password" name="password" placeholder="请输入密码（长度在6~12位之间）"
+                                                        id="password">
+                                <span id="s_password" class="error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td_left"><label for="Email">Email</label></td>
+                            <td class="td_right"><input type="email" name="email" placeholder="请输入Email" id="Email">
+                                <span id="s_email" class="error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td_left"><label for="rename">姓名</label></td>
+                            <td class="td_right"><input type="text" name="rename" placeholder="请输入真实姓名（中文姓名）" id="rename">
+                                <span id="s_rename" class="error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td_left"><label for="Telphone">手机号</label></td>
+                            <td class="td_right"><input type="text" name="telphone" placeholder="请输入您的手机号"
+                                                        id="Telphone">
+                                <span id="s_telphone" class="error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td_left"><label>性别</label></td>
+                            <td class="td_right"><input type="radio" name="gender" value="male" checked> 男
+                                <input type="radio" name="gender" value="female"> 女
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td_left"><label for="Birthday">出生日期</label></td>
+                            <td class="td_right"><input type="date" name="birthday" id="Birthday"></td>
+                        </tr>
+                        <tr>
+                            <td class="td_left"><label for="checkcode">验证码</label></td>
+                            <td class="td_right"><input type="text" name="checkcode" id="checkcode">
+                                <img src="../image/10.png" id="img_check"></td>
+                            <!--10.png为验证码图片-->
+
+                        </tr>
+                        <tr>
+                            <td colspan="2" id="td_sub"><input type="submit" value="注册" id="btn_sub"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="reg_right">
+            <p>已有账号?<a href="#">立即登录</a></p>
+        </div>
+    </div>
+    <script src="../js2/FormCheck.js"></script>
+ </body>
+
+ <script>
+     window.onload = function () {
+    //给表单绑定onsubmit事件
+    document.getElementById("form").onsubmit = function () {
+        return checkUsername() && checkPassword() &&checkEmail() && checkRename() && checkTelphone();
+    }
+
+    //给用户名和密码框、Email、姓名、手机号分别绑定离焦事件
+    document.getElementById("username").onblur = checkUsername;
+    document.getElementById("password").onblur = checkPassword;
+    document.getElementById("Email").onblur = checkEmail;
+    document.getElementById("rename").onblur = checkRename;
+    document.getElementById("Telphone").onblur = checkTelphone;
+}
+
+//校验用户名
+function checkUsername() {
+    //获取用户名的值
+    var username = document.getElementById("username").value;
+
+    //定义正则表达式
+    var reg_username = /^([a-zA-Z0-9_-])/;
+    //判断值是否符合正则表达式的规则
+    var flag = reg_username.test(username);
+
+    //提示信息
+    var s_username = document.getElementById("s_username");
+
+    if (flag) {
+        //提示绿色对勾
+        s_username.innerHTML = "<img src='../image/gou.png' width='35' height='25'>";
+    } else {
+        //提示红色错误信息
+        s_username.innerHTML = "用户名格式有误！";
+    }
+    return flag;
+}
+
+//校验密码
+function checkPassword(){
+    //1.获取密码的值
+    var password = document.getElementById("password").value;
+    //2.定义正则表达式
+    var reg_password = /^\w{6,12}$/;
+    //3.判断值是否符合正则的规则
+    var flag = reg_password.test(password);
+    //4.提示信息
+    var s_password = document.getElementById("s_password");
+
+    if(flag){
+        //提示绿色对勾
+        s_password.innerHTML = "<img width='35' height='25' src='../image/gou.png'/>";
+    }else{
+        //提示红色错误信息
+        s_password.innerHTML = "密码格式有误";
+    }
+    return flag;
+}
+//校验Email
+function checkEmail(){
+    //1.获取Email的值
+    var email = document.getElementById("Email").value;
+    //2.定义正则表达式
+    var reg_email = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+    //3.判断值是否符合正则的规则
+    var flag = reg_email.test(email);
+    //4.提示信息
+    var s_email = document.getElementById("s_email");
+
+    if(flag){
+        //提示绿色对勾
+        s_email.innerHTML = "<img width='35' height='25' src='../image/gou.png'/>";
+    }else{
+        //提示红色错误信息
+        s_email.innerHTML = "Email格式有误";
+    }
+    return flag;
+}
+//校验真实姓名
+function checkRename(){
+    //1.获取真实姓名的值
+    var rename = document.getElementById("rename").value;
+    //2.定义正则表达式
+    var reg_rename = /^[\u4e00-\u9fa5]{2,4}$/;
+    //3.判断值是否符合正则的规则
+    var flag = reg_rename.test(rename);
+    //4.提示信息
+    var s_rename = document.getElementById("s_rename");
+
+    if(flag){
+        //提示绿色对勾
+        s_rename.innerHTML = "<img width='35' height='25' src='../image/gou.png'/>";
+    }else{
+        //提示红色错误信息
+        s_rename.innerHTML = "真实姓名输入有误";
+    }
+    return flag;
+}
+//校验手机号
+function checkTelphone(){
+    //1.获取手机号的值
+    var telphone = document.getElementById("Telphone").value;
+    //2.定义正则表达式
+    var reg_telphone = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+    //3.判断值是否符合正则的规则
+    var flag = reg_telphone.test(telphone);
+    //4.提示信息
+    var s_telphone = document.getElementById("s_telphone");
+
+    if(flag){
+        //提示绿色对勾
+        s_telphone.innerHTML = "<img width='35' height='25' src='../image/gou.png'/>";
+    }else{
+        //提示红色错误信息
+        s_telphone.innerHTML = "手机号输入有误";
+    }
+    return flag;
+}
+
+ </script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        用户名：<input type="text" name="" id="" value="" /><br />
+        密码:<input type="password" value=""/><br />
+        Email:<input type="爱岗敬业" value="请输入邮箱"/><br />
+        姓名:<input type="text" name="a" value="请输入姓名" onblur="ifRight(value) "/>
+        <span id="print"> </span>
+        <br />
+        手机号:<input type="tel" value="请输入手机号"/><br />
+        性别：
+        <input type="radio" name="sex" checked="checked" />男
+        <input type="radio" name="sex" />女<br />
+        出生日期：<input type="date" name="" id="" value="" /><br />
+        验证码：<input type="text" name="" id="" value="" /><br />
+
+        <input type="submit" name="" id="" value="注册"/><br />
+    </form>
+    <script type="text/javascript">
+        var div1 = document.getElementById("print")
+        function ifRight(o){
+            if(o.length >= 4 && o.length <=16) {
+                div1.innerText = "姓名格式正确"
+            }else{
+                div1.innerText = "姓名格式错误"
+            }
+        }
+    </script>
+</body>
+</html>

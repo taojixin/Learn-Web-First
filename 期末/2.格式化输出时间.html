@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 2、格式化输出“今天是2021年11月22日 星期一” -->
+    <script>
+        var date = new Date();
+        var arr1 = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+        var month = date.getMonth() + 1;
+        document.write("今天是 " + date.getFullYear() + " 年 " + month + " 月 " + date.getDate() + " 日 " + arr1[date.getDay()]);
+    </script>
+</body>
+</html>

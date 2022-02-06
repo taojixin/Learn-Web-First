@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div class="weather">？z
+        <h1>今天天气:{{weather}}</h1>
+        <button @click='changeweather'>改变天气</button>
+        <h2>a的值：{{number.a}}</h2>
+        <button v-on:click='number.a++'>点击加一</button>
+    </div>
+    <script>
+        Vue.config.productionTip = false;//阻止提示
+        const a = new Vue({
+            el:'.weather',
+            data: {
+                isfo: false,
+                number:{
+                    a: 1,
+                    b:2,
+                }
+            },
+            methods: {
+                changeweather(){
+                    this.isfo = !this.isfo
+                }
+            },
+            computed:{
+                weather(){
+                    return this.isfo ? '炎热' : '凉爽'
+                }
+            },
+            watch:{
+                isfo:{
+                    handler(newvalue,oldvalue){
+                        console.log(oldvalue,newvalue);
+                    }
+                },
+                //监视的是整个watch(可以理解为地址值)
+                'number':{
+                    //监视多级结构中所有属性的变化
+                    deep:true,//深度监视，watch里的任意属性变了，都要执行一次
+                    handler(newvalue,oldvalue){
+                        console.log('watch' + newvalue,oldvalue);
+                    }
+                },
+                //监视的是watch中的a
+                // 'number.a':{
+                //     handler(newvalue,boldvalue){
+                //         console.log('a' + newvalue,boldvalue);
+                //     }
+                // }
+            }
+        })
+        a.$watch('number.a',{
+                    handler(newvalue,boldvalue){
+                        console.log('a' + newvalue,boldvalue);
+                    }
+                }
+        )
+    </script>
+</body>
+</html>

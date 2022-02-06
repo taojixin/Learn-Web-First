@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let a = function() {
+        //     cosole.log('普通声明函数');
+        // }
+        // let b = () => {
+        //     cnsole.log('省略了fuction的箭头函数');
+        // }
+        // let c = (a,b) => {
+        //     return a+b;
+        // }
+        // //调用函数
+        // let red = c(1,2);
+        // console.log(red);
+
+        // 2. 不能作为构造实例化对象
+        // let Person = (name, age) => {
+        //     this.name = name;
+        //     this.age = age;
+        // }
+        // let me = new Person('xiao',30);
+        // console.log(me);
+
+         //3. 不能使用 arguments 变量
+        let fn = () => {
+            console.log(arguments);
+        }
+        fn(1,2,3);
+    </script>
+</body>
+</html>

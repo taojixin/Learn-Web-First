@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 7.用JS实现梯形面积的计算，包括创建HTML页面。 -->
+<body>
+    <form action="">
+        上边框：<input type="text" id="up"><br>
+        下边框：<input type="text" id="below"><br>
+        高：<input type="text" id="height"><br>
+        梯形的面积：<input type="text" id="areas" readonly><br>
+        <input type="button" value="确定" onclick="show()">
+        <input type="reset">
+    </form>
+    <script>
+        function area(a,b,c){
+            return ((a + b) * c / 2);
+        }
+        function show(){
+            var a = document.getElementById("up");
+            var b = document.getElementById("below");
+            var c = document.getElementById("height");
+            var result = document.getElementById("areas");
+            var d = parseInt(a.value);
+            var e = parseInt(b.value);
+            var f = parseInt(c.value);
+            
+            result.value = area(d,e,f);
+        }
+    </script>
+</body>
+</html>

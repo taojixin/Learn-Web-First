@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 4.编写JavaScript程序实现：单击“变色”按钮，将奇数行的li标签背景色设置为深灰色，偶数行li标签背景色设置为浅灰色；单击“取消”按钮，背景颜色还原。 -->
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <input type="button" value="变色">
+    <input type="button" value="取消">
+</body>
+<script>
+    document.getElementsByTagName('input')[0].onclick = function(){
+        var li = document.getElementsByTagName("li");
+        for(i = 0;i < li.length;i++){
+            if(i % 2 === 0){
+                li[i].style.background = "gray";
+            }else{
+                li[i].style.background = "#dee1e6";
+            }
+        }
+    }
+    document.getElementsByTagName('input')[1].onclick  = function(){
+        var li = document.getElementsByTagName("li");
+        for(i = 0;i < li.length;i++){
+            li[i].style.background = "";
+        }
+    }
+</script>
+</html>

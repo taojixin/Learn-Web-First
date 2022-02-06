@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.创建类，创建一个对象
+        class Star{
+            //类的共有属性放到 construcor 里面
+            constructor(uname,age){
+                this.uname = uname;
+                this.age = age;
+            }
+            //方法
+            sing(song){
+                console.log(this.uname + song);
+            }
+        }
+        //2.利用类创建对象new
+        var hg = new Star("胡歌", 40);
+        var xa = new Star("小安", 18);
+        console.log(hg.age + ":" + hg.uname);
+        console.log(xa.age + ":" + xa.uname);
+        //(1)类里面所有的函数不需要写function
+        //(2)多个函数方法之间不需要逗号分隔
+        hg.sing("两只老虎");
+    </script>
+</body>
+</html>

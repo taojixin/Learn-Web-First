@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器</title>
+    <style type="text/css">
+		.computer{
+			margin: 100px auto;
+			width: 500px;
+			height: 500px;
+			background-color: rgb(73, 86, 120);
+			border-radius: 100px;
+			padding: 50px 100px;
+		}
+		.btn {
+			width: 80px;
+			height: 80px;
+            border: 0;
+			border-radius: 100px;
+			margin: 10px;
+			font-size: 40px;
+            box-shadow: 0px 7px 3px 0px rgb(112, 115, 134);
+            background-color: rgb(112, 115, 134,0.7);
+		}
+		#show {
+			width: 300px;
+            background-color: rgb(152, 209, 220);
+            box-shadow: 0px -8px 0px 0px rgb(152, 209, 220,0.7);
+		}
+        #equal,#clear{
+            background-color: rgb(227, 130, 81);
+            box-shadow: 0px 7px 3px 0px rgb(227, 130, 81,0.7);
+        }
+        #tiny,#add,#reduce,#mul,#division{
+            background-color: rgb(222, 222, 220);
+            box-shadow: 0px 7px 3px 0px rgb(222, 222, 220,0.7);
+        }
+	</style>
+</head>
+<body>
+    <form class="computer">
+        <input type="button" class="btn" id="clear"    value="C" />
+        <input type="text"   class="btn" id="show"     value="" />
+        <input type="button" class="btn" id="seven"    value="7" onclick="showvalue(this)" />
+        <input type="button" class="btn" id="eight"    value="8" onclick="showvalue(this)" />
+        <input type="button" class="btn" id="nine"     value="9" onclick="showvalue(this)" />
+        <input type="button" class="btn" id="add"      value="+" onclick="showvalue(this)" />
+        <input type="button" class="btn" id="four"     value="4" onclick="showvalue(this)" />
+        <input type="button" class="btn" id="five"     value="5" onclick="showvalue(this)" />
+        <input type="button" class="btn" id="six"      value="6" onclick="showvalue(this)" />
+        <input type="button" class="btn" id="mul"      value="*" onclick="showvalue(this)" />
+        <input type="button" class="btn" id="one"      value="1" onclick="showvalue(this)" />
+        <input type="button" class="btn" id="two"      value="2" onclick="showvalue(this)" />
+        <input type="button" class="btn" id="three"    value="3" onclick="showvalue(this)" />
+        <input type="button" class="btn" id="reduce"   value="-" onclick="showvalue(this)" />
+        <input type="button" class="btn" id="zero"     value="0" onclick="showvalue(this)" />
+        <input type="button" class="btn" id="tiny"     value="." onclick="showvalue(this)" />
+        <input type="button" class="btn" id="division" value="/" onclick="showvalue(this)" />
+        <input type="button" class="btn" id="equal"    value="=" />
+    </form>
+    <script type="text/javascript">
+        var sum = ["","",""];//三个位置分别用来存放 运算符，第一个数，第二个数
+        var num;//用来记录长度
+        var num1;//用来存放第一个数
+        var num2;//用来存放第二个数
+        
+        var clear1 = document.getElementById("clear");//获取clear按钮，便于添加事件
+        var show1 = document.getElementById("show");//获取显示框
+
+        //给0-9和+—*/添加的点击事件
+        function showvalue(a){
+            //这里不理解来问我
+            if(a.value == "."){
+                show1.value += a.value;
+            }else if(parseInt(a.value)){
+                show1.value += a.value;
+            }else{
+                num = show1.value.length;//得到第一个字符串（即第一个数字，此时是字符类型）的长度
+                sum[1] = show1.value;//用于获取第一个数字（此时还是字符串类型，后面会转换成数字型的）
+                sum[0] = a.value;//用于获取运算符
+                show1.value += a.value;
+            }
+        }
+        clear1.addEventListener("click",function(){
+            show1.value = "";
+            sum = ["","",""];//清除sum之前存储的内容
+        });
+
+        //给等于按钮添加事件计算最后的结果
+        document.getElementById("equal").addEventListener("click",function(){
+            sum[2] = show1.value.substr(num+1,show1.value.length - num);//用于截取并获得整个文本框中 运算符 后面的字符串（即第二个数字）
+            num1 = parseFloat(sum[1]);//将第一个数字由字符型转换成浮点型（考虑到有小数点的情况）
+            num2 = parseFloat(sum[2]);//将第二个数字由字符型转换成浮点
+            //判断运算符是哪个运算符，进行运算并显示
+            if(sum[0] == '+'){
+                show1.value = num1 + num2;
+            }else if(sum[0] == '-'){
+                show1.value = num1 - num2;
+            }else if(sum[0] == '*'){
+                show1.value = num1 * num2;
+            }else if(sum[0] == '/'){
+                show1.value = num1 / num2;
+            }
+        });
+    </script>
+</body>
+</html>

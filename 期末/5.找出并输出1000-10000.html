@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 5、编写JavaScript程序实现找出并输出1000-10000之间是17的倍数且为偶数的所有整数。每个整数之间空2个空格，并且每行输出10个整数； -->
+    <script>
+        var str = "";
+        var n = 1;
+        for(var i = 1000;i <= 10000;i++){
+            if(i % 17 === 0 && i % 2 === 0){
+                if(n % 10 != 0){
+                    str = str + i + "&nbsp&nbsp";
+                }else{
+                    str = str + i + "<br>";
+                }
+                n++;
+            }
+        }
+        document.write(str);
+    </script>
+</body>
+</html>

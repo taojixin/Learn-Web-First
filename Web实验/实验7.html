@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- vue框架 -->
+    <script src="vue.js"></script>
+    <style type="text/css">
+        .todolistDiv{
+            margin:200px auto;
+            width:220px;
+            height: auto;
+        }
+        .btn{		
+            opacity: 0.5;
+            border: none;
+            margin-left: 10px;
+        }
+        .ipt{
+            box-shadow:0 0 8px #9668db;
+            border:none;
+        }
+        span{
+            font-size: 50px;
+        }
+        .liDiv{
+            margin-top: 10px;
+        }
+        .complete{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- todolist练手项目 -->
+	<div id="vue-todolist" class="todolistDiv">
+        <span> todolist</span>
+            <input class="ipt" type="text" v-model="inputVaule" v-on:keyup.enter="add"/>
+            <button v-on:click="add" class="btn">add</button>
+            <ul >
+                <li v-for="item in items" >
+                <div class="liDiv">
+                    <input type="checkbox" v-model="item.completed">
+                    <label  v-bind:class="{ complete:item.completed }">{{item.text}}</label>
+                    <button v-on:click="removeTodo(item)" class="btn">x</button></li>
+                </div>
+            </ul>
+        </div>
+</body>
+<script>
+    //localStroage保存数据
+    var STORAGE_KEY = 'todos-vuejs'//名称
+    var todoStorage = {
+    fetch: function () {
+        var todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
+        todos.forEach(function (todo, index) {
+            todo.id = index
+        })
+        todoStorage.uid = todos.length
+        return todos    
+    },
+    save: function (todos) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(todos))
+    }
+}		
+
+    
+var vm=new Vue({
+    el: '#vue-todolist',
+    data: {
+        items:todoStorage.fetch(),//直接从localstroage拿数据
+        inputVaule:""
+    },
+    mounted:function(){/*ready*/
+
+    },
+
+    methods:{
+    add:function(){
+        var _this=this;
+        this.items.push({text:this.inputVaule,completed:true});
+        this.inputVaule="";
+     },
+    removeTodo: function (todo) {
+        this.items.splice(this.items.indexOf(todo), 1)
+     }
+    },
+
+    watch:{
+         items:{
+         handler:function(items){
+            todoStorage.save(items)
+        },
+        deep:true
+        }
+    }
+})
+
+</script>
+</html>

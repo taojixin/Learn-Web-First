@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <form  @submit.prevent="printf">
+            账号：<input type="text" v-model="account"><br>
+            密码：<input type="password" v-model="password"><br>
+            年龄：<input type="number" v-model.number="age"><br>
+            性别：
+            男<input type="radio" name="sex" v-model="sex" value="male">
+            女<input type="radio" name="sex" v-model="sex" value="female"><br>
+            爱好：
+            学习<input type="checkbox" v-model='hobby' value="study">
+            打游戏<input type="checkbox" v-model='hobby' value="playgame">
+            吃饭<input type="checkbox" v-model='hobby' value="eat"><br>
+            所属校区：
+            <select v-model='studyarea'>
+                <option value="">请选择校区</option>
+                <option value="beijin">北京</option>
+                <option value="shanghai">上海</option>
+                <option value="shenzhen">深圳</option>
+                <option value="chengdu">成都</option>
+            </select><br>
+            其他信息：
+            <textarea v-model.lazy="othermessage"></textarea><br>
+            <input type="checkbox" v-model="ifagree">阅读并订阅<a href="#">《用户协议》</a><br>
+            <button>提交</button>
+
+        </form>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false;
+
+    new Vue({
+        el:"#root",
+        data:{
+            account:'',
+            password:'',
+            age:'',
+            sex:'',
+            hobby:[],
+            studyarea:'',
+            othermessage:'',
+            ifagree:''
+        },
+        methods:{
+            printf(){
+                console.log(JSON.stringify(this._data))
+            }
+        }
+    })
+</script>
+</html>

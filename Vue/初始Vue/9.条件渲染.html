@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h1 v-show='ifo'>show</h1>
+        <h1 v-if='isfalse'>v-if</h1>
+        <h1 v-else-if='isfalse'>v-else-if</h1>
+        <h1 >v-else-if</h1>
+        <h1 v-else='istrue'>v-esle</h1>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false;
+
+    new Vue({
+        el:'#root',
+        data:{
+            ifo:true   ,//这里不是写字符串，不能写成'false'
+            istrue:true,
+            isfalse:false,
+        },
+    })
+</script>
+</html>

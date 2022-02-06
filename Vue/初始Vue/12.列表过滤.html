@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h2>人员列表</h2>
+        <input type="text" placeholder="请输入名字" v-model="keyword">
+        <ul>
+            <li v-for='(p,index) in filPerons' :key="p.id">{{p.name}}-{{p.age}}-{{p.sex}}</li>
+        </ul>
+    </div>
+
+    <script>
+        Vue.config.pruductionTip = false;
+
+        // //watch实现
+        // //filter用法：filter方法用来迭代一个数组，回调函数返回为true则会保存在数组中，否则...，按给出的条件过滤选出符合的元素，形成新数组
+        // //indexOf用法：查询到了返回索引，否则返回-1
+        // new Vue({
+        //     el:'#root',
+        //     data:{
+        //         keyword:'',
+        //         persons:[
+		// 			{id:'001',name:'马冬梅',age:19,sex:'女'},
+		// 			{id:'002',name:'周冬雨',age:20,sex:'女'},
+		// 			{id:'003',name:'周杰伦',age:21,sex:'男'},
+		// 			{id:'004',name:'温兆伦',age:22,sex:'男'}
+		// 		],
+        //         filPerons:[]
+        //     },
+        //     watch:{
+        //         keyword:{
+        //             immediate:true,
+        //             handler(a){//a为输入框的值，a改变则就调用handler方法
+        //                 this.filPerons = this.persons.filter((p)=>{//filPerons用于接收filter过滤出的数组 注：filter是遍历persons数组中的所有元素
+        //                     return p.name.indexOf(a) !== -1
+        //                 })
+        //             }
+        //         }
+        //     }
+        // })
+
+        //用computed实现
+        new Vue({
+            el:'#root',
+            data:{
+                keyword:'',
+                persons:[
+					{id:'001',name:'马冬梅',age:19,sex:'女'},
+					{id:'002',name:'周冬雨',age:20,sex:'女'},
+					{id:'003',name:'周杰伦',age:21,sex:'男'},
+					{id:'004',name:'温兆伦',age:22,sex:'男'}
+				],
+            },
+            computed:{
+                filPerons(){//计算属性filPerons所依赖的keyword每次发生变化时，就会调用该方法
+                    return this.persons.filter((p)=>{
+                        return p.name.indexOf(this.keyword) !== -1;
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+</html>

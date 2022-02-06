@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class = 'box'>1</div>
+    <div class = 'box'>2</div>
+    <div id = 'box'>3</div>
+    <ul id = 'a'>
+        <li>1</li>
+        <li>2</li>
+    </ul>
+    <script>
+        //getElementsByClassName
+        var boxs = document.getElementsByClassName('box');
+        console.log(typeof boxs);//object
+        console.log(boxs);
+        //querySelector
+        var firstBox = document.querySelector('.box');
+        console.log(firstBox);//返回 <div class = 'box'>1</div>
+        var a = document.querySelector('#box');
+        console.log(a);//返回 <div class = 'box'>3</div>
+        var b = document.querySelector('li');
+        console.log(typeof b);//boject
+        console.log(b);//返回 第一个li
+        //querySelectorAll
+        var allBox = document.querySelectorAll('.box');
+        console.log(typeof allBox);//boject
+        console.log(allBox);//返回所有box的集合
+        var allLi = document.querySelectorAll('li');
+        console.log(typeof allLi);//boject
+        console.log(allLi);//返回所有li的集合
+
+
+
+    </script>
+</body>
+</html>
