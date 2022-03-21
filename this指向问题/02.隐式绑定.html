@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 案例1
+    function foo() {
+      console.log(this);
+    }
+    var obj = {
+      name: 'tjx',
+      foo: foo
+    }
+    obj.foo(); // 指向obj对象
+
+    // 案例2
+    function foo1() {
+      console.log(this);
+    }
+    var obj1 = {
+      name: 'tjx1',
+      foo: foo
+    }
+    var obj2 = {
+      name: 'tjx2',
+      obj1: obj1
+    }
+    obj2.obj1.foo(); // this指向obj1  (指向调用这个函数的那个对象)
+
+    // 案例3
+    function foo2() {
+      console.log(this);
+    }
+    var obj3 = {
+      name: 'obj3',
+      foo: foo2
+    }
+    var bar = obj3.foo;
+    bar(); // this指向window，默认绑定，直接调用的foo2函数，因为var bar = obj3.foo，bar只是个函数了
+  </script>
+</body>
+</html>

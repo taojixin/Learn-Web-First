@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var name = 'window'
+    var person1 = {
+      name: 'person1',
+      foo1: function () {
+        console.log(this.name);
+      },
+      foo2: () => console.log(this.name),
+      foo3: function () {
+        return function () {
+          console.log(this.name);
+        }
+      },
+      foo4: function () {
+        return () => {
+          console.log(this.name);
+        }
+      }
+    }
+    var person2 = {name: 'person2'}
+
+    person1.foo1(); // person1
+    person1.foo1.call(person2) // person2
+
+    person1.foo2() // window foo2为箭头函数，所以没有进行隐式绑定，所以去上层作用域中寻找对应this,foo2()的上层作用域是全局，不是person1对象(因为对象里的函数的作用域为全局，js没有对象作用域)
+    person1.foo2.call(person2) // window 由于箭头函数没有作用域，call、bind等是不生效的，所以还是从全局作用域中寻找对应this
+
+    person1.foo3()() // window 原因是person1.foo3()()的意思是直接调用的foo3()里的函数，属于独立调用函数，默认绑定为window
+    person1.foo3.call(person2)() // window 这里只是改变了person1.foo3()的this指向为person2,但是后面还有个()，所以属于独立调用，依然为window
+    person1.foo3().call(person2) // person2 显示绑定
+
+    person1.foo4()() // person1 这里箭头函数的上层作用域为foo4，foo4的this绑定为person1，所以为Person1
+    person1.foo4.call(person2)() // person2  箭头函数的上层作用域foo4被显示绑定为person2，所以为person2
+    person1.foo4().call(person2) // person1
+  </script>
+</body>
+</html>

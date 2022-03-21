@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="box">123</div>
+  <script>
+    // setTimeout
+    setTimeout(function() {
+      console.log(this);  // this指向window
+    }, 1000)
+
+    // foeEach
+    var num = [1,2,3,4,5]
+    var obj = {name: 'tjx'}
+    num.forEach(function(item) {
+      console.log(this);  // 所以几次的循环绑定都为obj对象
+    },obj)   // forEach的第二个参数为绑定的this
+    num.forEach(function(item) {
+      console.log(this);  // 这里几次的循环绑定都为window
+    })  
+
+    // 点击事件
+    var box = document.querySelector(".box")
+    box.onclick = function() {
+      console.log(this);  // this指向box对象
+    }
+  </script>
+</body>
+</html>

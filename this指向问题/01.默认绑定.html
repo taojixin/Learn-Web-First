@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 案例1
+    function foo() {
+      console.log(this); // window
+    }
+    foo();
+
+    // 案例2
+    function foo1() {
+      console.log(this); // window
+      foo2();
+    }
+    function foo2() {
+      console.log(this); // window
+      foo3();
+    }
+    function foo3() {
+      console.log(this); // window
+    }
+    foo1();
+
+    // 案例3
+    function foo4(func) {
+      func()
+    }
+    var obj = {
+      name: 'why',
+      bar: function() {
+        console.log(this);
+      }
+    }
+    foo(obj.bar); // window  这里还是直接调用的函数
+    
+  </script>
+</body>
+</html>

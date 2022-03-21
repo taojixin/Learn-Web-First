@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 案例1   通过call或者apply绑定this对象
+    function foo() {
+      console.log(this);
+    }
+    foo.call(window) // window
+    foo.call({name: 'tjx'});  // object
+    foo.call(123); // number
+
+    // 案例2
+    function foo1() {
+      console.log(this);
+    }
+    var obj = {
+      name: 'obj'
+    }
+    var bar = foo1.bind(obj);
+    bar();  // this绑定obj对象
+  </script>
+</body>
+</html>
