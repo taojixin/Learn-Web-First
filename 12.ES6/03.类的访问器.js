@@ -12,4 +12,4 @@ class Abc {
     return "获取" // get必须有返回值
   }
 }
-console.log(Abc.name);
+console.log(Abc.name); // Abc
