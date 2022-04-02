@@ -15,5 +15,7 @@ console.log(a); // 12
 // 2.解构重命名
 var {name: newName} = obj
 console.log(newName); // tjx
-var { address: newAddress = "广州" } = obj
-console.log(newAddress);
+
+// 3.解构重命名并给默认值
+var { address: newAddress = "广州" } = obj  
+console.log(newAddress); // 广州

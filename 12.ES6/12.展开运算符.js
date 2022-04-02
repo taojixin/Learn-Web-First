@@ -16,4 +16,4 @@ console.log(newNameg); // [ 'asd', 'dfg', 'sdfg', 't', 'j', 'x' ]
 
 // 3.构造对象字面量时
 const objh = {...infog, address: 'guand'}
-console.log(objh);
+console.log(objh); // { name: 'tjx', age: 19, address: 'guand' }
