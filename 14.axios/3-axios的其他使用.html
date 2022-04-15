@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.24.0/axios.min.js"></script>
+
+</head>
+<body>
+  <h2>其他使用</h2>
+  <button>发送GET请求</button>
+  <button>发送POST请求</button>
+  <button>发送PUT请求</button>
+  <button>发送DELETE请求</button>
+
+  <script>
+    const btns = document.querySelectorAll("button");
+
+    // 发送GET请求
+    btns[0].onclick = function() {
+      axios.request({
+        method: 'GET',
+        url: 'http://localhost:3000/comments'
+      }).then(response => {
+        console.log(response);
+      })
+    }
+
+    // 发送POST请求
+    btns[1].onclick = function() {
+      axios.post(
+        'http://localhost:3000/comments',
+        {
+          "body": "喜大普奔",
+          "postId": 2
+        }
+      ).then(response => {
+          console.log(response);
+        })
+    }
+  </script>
+</body>
+</html>

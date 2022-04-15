@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>、
+  <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.24.0/axios.min.js"></script>
+</head>
+<body>
+  <h2>基本使用</h2>
+  <button>发送GET请求</button>
+  <button>发送POST请求</button>
+  <button>发送PUT请求</button>
+  <button>发送DELETE请求</button>
+
+  <script>
+    const btns = document.querySelectorAll("button");
+
+    // 第一个
+    btns[0].onclick = function() {
+      // 发送请求
+      axios({
+        // 请求类型
+        method: 'GET',
+        // URL
+        url: 'http://localhost:3000/posts/2',
+      }).then(response => {
+        console.log(response);
+      })
+    }
+
+    // 添加一篇文章
+    btns[1].onclick = function() {
+      axios({
+        // 发送 AJAX请求
+        method: 'POST',
+        //URL
+        url: 'http://localhost:3000/posts',
+        // 设置请求体
+        data: {
+          tiltle: "今天天气不错，还挺风和日丽",
+          autor: "张三"
+        }
+      }).then(response => {
+        console.log(response)
+      })
+    }
+
+    // 更新数据
+    btns[2].onclick = function() {
+      // 发送ajax请求
+      axios({
+        // 请求类型
+        method: 'PUT',
+        // URL
+        url: 'http://localhost:3000/posts/3',
+        // 设置请求体
+        data: {
+          tiltle: "今天天气不错，还挺好",
+          autor: "李四"
+        }
+      }).then(response => {
+        console.log(response)
+      })
+    }
+
+    // 删除数据
+    btns[3].onclick = function() {
+      axios({
+        // 请求类型
+        method: 'delete',
+        // URL
+        url: 'http://localhost:3000/posts/3',
+      }).then(response => {
+        console.log(response);
+      })
+    }
+  </script>
+</body>
+</html>
