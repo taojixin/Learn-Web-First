@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">添加cookie</button>
+
+  <script>
+    document.getElementById('btn').onclick = function() {
+      // 设置国过期时间就是本地cookie，不设置就是内存cookie
+      // document.cookie = 'name=coderwhy';
+      // document.cookie = 'age=18';
+      document.cookie = 'name=coderwhy;max-age=5'
+    }
+
+    console.log(document.cookie);
+  </script>
+</body>
+</html>
