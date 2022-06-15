@@ -1,0 +1,57 @@
+body {
+  width: 100%;
+  background-image: url(./images/index_bg.jpg);
+}
+.left-box {
+  padding: 10px;
+  width: 50%;
+  float: left;
+}
+ .dunpai{
+  width: 24%;
+} 
+.yeting{
+  width: 24%;
+}
+ .heying{
+  width: 50%;
+}
+ .bottom-left-box {
+  position: relative;
+}
+.left-box .bottom-left-box .zhedu {
+  position: absolute;
+  left: 200px;
+  top: 100px;
+}
+
+.right-box {
+  padding: 10px;
+  width: 45%;
+  float: right;
+  position: relative;
+}
+.dazhang {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+ul li {
+  list-style: none;
+  margin-left: 60px;
+  font-size: 20px;
+}
+h1 {
+  margin: 0;
+  font-weight: bold;
+}
+p {
+  width: 230px;
+  font-size: 18px;
+  position: absolute;
+  left: 80px;
+}
+.two {
+  top: 450px;
+}

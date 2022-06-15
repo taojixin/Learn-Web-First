@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中国服饰</title>
+  <!-- 引入字体图标 -->
+  <link rel="stylesheet" href="./font/iconfont.css">
+  <!-- 引入全局样式 -->
+  <link rel="stylesheet" href="./css/global.css">
+  <!-- 引入首页样式 -->
+  <link rel="stylesheet" href="./css/home.css">
+  <!-- 引入swiper -->
+  <script src="./javascript/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+</head>
+
+<body>
+  <!-- 顶部 -->
+  <div class="top">
+    <div class="top-content w">
+      <i class="iconfont icon-shouye fangiz"></i>
+      <a href="#" class="title">中国服饰网首页</a>
+      <span class="line">|</span>
+      <span class="greetings">您好，亲爱的朋友！</span>
+      <a href="#" class="login">请登录</a>
+      <a href="#" class="registered">免费注册</a>
+      <i class="iconfont icon-youjian_o youj"></i>
+      <span class="mymessage">我的消息</span>
+      <span class="linetwo">|</span>
+      <i class="iconfont icon-icon03"></i>
+      <span class="myself">个人中心</span>
+      <span class="linethree">|</span>
+      <i class="iconfont icon-shoucangjia"></i>
+      <span class="favorites">收藏夹</span>
+    </div>
+  </div>
+  <!-- header -->
+  <div class="header w">
+    <img src="./images/logo.png" class="logo" alt="">
+    <h1>服饰网</h1>
+    <span class="separated">|</span>
+    <h2>传统服饰</h2>
+    <input type="text" class="search">
+    <button class="submit">搜索</button>
+  </div>
+  <!-- top-nav -->
+  <div class="top-nav">
+    <div class="w">
+      <ul>
+        <li><a href="./index.html">首 页</a></li>
+        <li style="background-color: #ed6f82;"><a href="#">汉 服</a></li>
+        <li><a href="#">旗 袍</a></li>
+        <li><a href="#">宫 廷</a></li>
+        <li><a href="#">古 代</a></li>
+        <li><a href="#">近 代</a></li>
+        <li><a href="#">纹 样</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- home-banner -->
+  <div class="home-banner w">
+    
+  </div>
+
+  <!-- 轮播图 -->
+  <div class="shuffling">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="./images/古代服饰简画1.jpg" alt="" srcset="">
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/古代服饰简画12.jpg" alt="" srcset="">
+        </div>
+        <div class="swiper-slide">
+          <img src="./古代服饰简画3.jpg" alt="" srcset="">
+        </div>
+      </div>
+      <!-- 如果需要分页器 -->
+      <div class="swiper-pagination"></div>
+
+      <!-- 如果需要导航按钮 -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- 如果需要滚动条 -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+  </div>
+
+  <!-- home-sort -->
+  <div class="home-srot w">
+
+  </div>
+
+  <!-- 轮播图js -->
+  <script src="./javascript/swiper-bundle.min.js"></script>
+  <script>
+    var mySwiper = new Swiper('.swiper', {
+      direction: 'horizontal', // 垂直切换选项
+      loop: true, // 循环模式选项
+      grabCursor: true, // 鼠标覆盖Swiper 时指针会变成手掌形状，拖动时指针会变成抓手形状。
+      roundLengths: true,
+
+      // 如果需要分页器
+      // pagination: {
+      //   el: '.swiper-pagination',
+      //   clickable:true,
+      // },
+
+      // 如果需要前进后退按钮
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      // 自动切换
+      autoplay: {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: true,
+      },
+
+      // 切换效果
+      effect: 'coverflow'
+    })        
+  </script>
+</body>
+
+</html>

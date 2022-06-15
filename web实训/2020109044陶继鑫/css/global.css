@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  /* background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%); */
+  background-color: rgb(251, 225, 229);
+  height: 1000px;
+  margin: 0;
+}
+
+.w {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #2d2e2f;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}

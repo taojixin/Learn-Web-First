@@ -1,0 +1,227 @@
+/* 顶部 */
+.top {
+  height: 30px;
+  background-color: rgb(239, 199, 205);
+}
+.top-content {
+  position: relative;
+  height: 30px;
+}
+.top-content i,a,span {
+  position: absolute;
+  top: 6px;
+}
+.top-content .fangiz {
+  left: 0;
+}
+.top-content .title {
+  left: 18px;
+  font-size: 12px;
+}
+.top-content a:hover {
+  color: #d58a95;
+}
+.top-content .line {
+  left: 120px;
+  top: 3px;
+  color: #e7eaed;
+}
+.top-content .greetings {
+  left: 140px;
+  font-size: 12px;
+}
+.top-content .login {
+  left: 250px;
+  font-size: 12px;
+  color: rgb(221, 88, 110);
+}
+.top-content .registered {
+  left: 290px;
+  font-size: 12px;
+
+}
+.top-content .icon-youjian_o {
+  right: 265px;
+  font-size: 18px;
+}
+.top-content .mymessage {
+  right: 210px;
+  font-size: 12px;
+}
+.top-content .linetwo {
+  right: 190px;
+  top: 3px;
+  color: #e7eaed;
+}
+.top-content .icon-icon03 {
+  right: 160px;
+}
+.top-content .myself {
+  font-size: 12px;
+  right: 110px;
+}
+.top-content .linethree {
+  right: 90px;
+  top: 3px;
+  color: #e7eaed;
+}
+.top-content .icon-shoucangjia {
+  right: 60px;
+}
+.top-content .favorites {
+  right: 20px;
+  font-size: 12px;
+}
+
+/* ==================================================== */
+/* footer */
+.header {
+  position: relative;
+  height: 100px;
+}
+.header .logo {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.header h1 {
+  position: absolute;
+  top: 5px;
+  left: 85px;
+  color: #d58a95;
+  text-shadow: 1px 1px 1px #e4a205;
+}
+.header .separated {
+  position: absolute;
+  left: 200px;
+  top: 10px;
+  font-size: 50px;
+  color: #efc7cd;
+}
+.header h2 {
+  position: absolute;
+  left: 230px;
+  top: 10px;
+  color: #d58a95;
+  text-shadow: 1px 1px 1px #ecd59f;
+}
+.header .search {
+  position: absolute;
+  top: 30px;
+  left: 600px;
+  width: 350px;
+  height: 40px;
+  background: none;
+  outline: none;
+  border: 2px solid #ec9ba7;
+}
+.header .submit {
+  position: absolute;
+  left: 950px;
+  top: 30px;
+  background-color: #ec9ba7;
+  border: none;
+  width: 60px;
+  height: 40px;
+  color: #e7eaed;
+  font-size: 20px;
+}
+.header .submit:hover {
+  color: #d58a95;
+  cursor: pointer;
+
+}
+
+/* ==================================================== */
+/* top-nav */
+.top-nav {
+  position: relative;
+  height: 50px;
+  background-color: #ee8796;
+}
+.top-nav ul {
+  margin-left: 50px;
+}
+.top-nav ul li  {
+  float: left;
+  width: 100px;
+  height: 50px;
+  transition: all .5s;
+  margin-left: 20px;
+}
+.top-nav ul li:hover {
+  background-color: #ed6f82;
+  border-radius: 3px;
+}
+.top-nav ul li a {
+  position: absolute;
+  font-size: 20px;
+  line-height: 40px;
+  margin-left: 28px;
+  color: #e60e2e;
+  font-weight: bold;
+  /* text-shadow: 1px 1px 4px #d58a95; */
+}
+
+
+/* ==================================================== */
+/* home-banner */
+.home-banner {
+  position: relative;
+  margin-top: 20px;
+  height: 500px;
+}
+.home-banner .swiper {
+  width: 600px;
+  height: 400px;
+  border-radius: 5px;
+}
+.shuffling .swiper img {
+  width: 600px;
+  height: 400px;
+}
+.home-banner .video {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-right: 0px;
+  width: 700px;
+}
+.home-banner .left-banner {
+  position: absolute;
+  width: 230px;
+  height: 500px;
+  border: 1px solid black;
+}
+.home-banner .left-banner .bg3 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 400px;
+  height: 500px;
+}
+.home-banner .introduce-banner {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 18px;
+  width: 300px;
+  color: #ee8796;
+}
+.home-banner .right-banner {
+  position: absolute;
+  right: 0;
+  width: 230px;
+  height: 500px;
+  border: 1px solid black;
+}
+.home-banner .bottom-banner {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.home-banner .bottom-banner .bgtottom {
+  width: 700px;
+  height: 170px;
+}
