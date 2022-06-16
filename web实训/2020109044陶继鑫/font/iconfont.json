@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1394",
+      "name": "树苗",
+      "font_class": "shumiao",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "577350",
+      "name": "朋友",
+      "font_class": "pengyou",
+      "unicode": "e746",
+      "unicode_decimal": 59206
+    },
+    {
+      "icon_id": "3834207",
+      "name": "书画卷",
+      "font_class": "shuhuajuan",
+      "unicode": "e6a2",
+      "unicode_decimal": 59042
+    },
+    {
+      "icon_id": "4294038",
+      "name": "书籍",
+      "font_class": "shuji",
+      "unicode": "e777",
+      "unicode_decimal": 59255
+    },
+    {
+      "icon_id": "5121751",
+      "name": "头饰",
+      "font_class": "toushi",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "9073993",
+      "name": "3_8文明礼仪",
+      "font_class": "_wenmingliyi",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
       "icon_id": "745284",
       "name": "个人中心",
       "font_class": "icon03",

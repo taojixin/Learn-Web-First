@@ -74,7 +74,7 @@
 }
 
 /* ==================================================== */
-/* footer */
+/* header */
 .header {
   position: relative;
   height: 100px;
@@ -139,21 +139,21 @@
   height: 50px;
   background-color: #ee8796;
 }
-.top-nav ul {
+.top-nav .ul-top {
   margin-left: 50px;
 }
-.top-nav ul li  {
+.top-nav .ul-top li  {
   float: left;
   width: 100px;
   height: 50px;
   transition: all .5s;
   margin-left: 20px;
 }
-.top-nav ul li:hover {
+.top-nav .ul-top li:hover {
   background-color: #ed6f82;
   border-radius: 3px;
 }
-.top-nav ul li a {
+.top-nav .ul-top li a {
   position: absolute;
   font-size: 20px;
   line-height: 40px;
@@ -191,35 +191,172 @@
   position: absolute;
   width: 230px;
   height: 500px;
-  border: 1px solid black;
+  background-color: rgb(233, 162, 162);
+  transition: all .5s;
 }
-.home-banner .left-banner .bg3 {
+.home-banner .left-banner:hover {
+  box-shadow: 5px 5px 5px gray;
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+
+.left-banner h2 {
+  color: #ea2c2c;
+  text-shadow: 1px 1px 1px white;
+  margin-left: 20px;
+}
+.left-banner p {
+  margin: 10px;
+  font-size: 14px;
+  color: #828c96;
+  text-indent: 2em;
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 400px;
-  height: 500px;
 }
-.home-banner .introduce-banner {
+.left-banner .introduce1 {
+  top: 50px;
+  text-shadow: 1px 1px 1px pink;
+}
+.left-banner .introduce2 {
+  top: 195px;
+  color: #4f5c69;
+}
+.left-banner .introduce3 {
+  top: 280px;
+  color: #697d92;
+}
+.left-banner .bird {
   position: absolute;
-  left: 10px;
-  top: 10px;
-  font-size: 18px;
-  width: 300px;
-  color: #ee8796;
+  bottom: 0;
+  width: 230px;
+  height: 150px;
 }
+
+
+/* 右侧 */
 .home-banner .right-banner {
   position: absolute;
   right: 0;
   width: 230px;
-  height: 500px;
-  border: 1px solid black;
+  height: 350px;
+  background-color: #f1cbd1;
+  transition: all .5s;
 }
+.home-banner .right-banner:hover {
+  box-shadow: 5px 5px 5px gray;
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+.home-banner .right-banner .recommend {
+  padding-left: 10px;
+  border-left: 10px solid red;
+  border-radius: 5px;
+}
+.right-banner .redommend-ul  {
+  padding-left: 10px;
+}
+.right-banner .redommend-ul li{
+  margin: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #828c96;
+  list-style: circle;
+}
+.right-banner .redommend-ul li:hover {
+  cursor: pointer;
+}
+.right-bottom-banner {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 230px;
+  height: 130px;
+  background-color: #e2aab2;
+  transition: all .5s;
+}
+.right-bottom-banner:hover {
+  box-shadow: 5px 5px 5px gray;
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.right-bottom-banner i,span {
+  position: absolute;
+}
+.right-bottom-banner i {
+  color: rgb(226, 35, 67);
+  font-size: 25px;
+}
+.right-bottom-banner span {
+  font-size: 14px;
+  color: #263b50;
+  font-weight: bold;
+}
+.right-bottom-banner .icon-shumiao {
+  top: 10px;
+  left: 20px;
+}
+.right-bottom-banner .qimen {
+  top: 35px;
+  left: 20px;
+}
+.right-bottom-banner .icon-shuhuajuan {
+  top: 10px;
+  left: 95px;
+}
+.right-bottom-banner .shishu {
+  top: 35px;
+  left: 95px;
+}
+.right-bottom-banner .icon-toushi {
+  top: 10px;
+  left: 160px;
+}
+.right-bottom-banner .toushi {
+  top: 35px;
+  left: 160px;
+}
+.right-bottom-banner .icon-shuji {
+  top: 70px;
+  font-size: 30px;
+  left: 160px;
+}
+.right-bottom-banner .gushu {
+  top: 100px;
+  left: 162px;
+}
+.right-bottom-banner .icon-pengyou {
+  top: 70px;
+  left: 95px;
+  font-size: 28px;
+}
+.right-bottom-banner .zhuzi {
+  top: 100px;
+  left: 95px;
+}
+.right-bottom-banner .icon-_wenmingliyi {
+  top: 70px;
+  font-size: 28px;
+  left: 20px;
+}
+.right-bottom-banner .liyi {
+  top: 100px;
+  left: 20px;
+}
+
+
+ 
+
 .home-banner .bottom-banner {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  transition: all .5s;
+}
+.home-banner .bottom-banner:hover {
+  box-shadow: 5px 5px 5px gray;
+  cursor: pointer;
 }
 .home-banner .bottom-banner .bgtottom {
   width: 700px;

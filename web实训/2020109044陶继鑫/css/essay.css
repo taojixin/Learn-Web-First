@@ -1,0 +1,125 @@
+.essay-content {
+  position: relative;
+  width: 900px;
+  background-color: rgb(240, 200, 207);
+  height: 4500px;
+  margin: 10px auto;
+  padding: 20px;
+
+}
+
+.essay-content .essay-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  color: rgb(125, 89, 89);
+  text-shadow: 2px 2px 2px #ee8796;
+}
+
+.essay-message {
+  position: absolute;
+  left: 0;
+  top: 60px;
+  height: 40px;
+  /* border: 1px solid black; */
+  width: 100%;
+}
+
+.essay-message .essay-home {
+  position: absolute;
+  left: 260px;
+  font-size: 14px;
+  color: #ee8796;
+  top: 10px;
+  font-weight: bold;
+}
+
+.essay-message .icon-shijian {
+  position: absolute;
+  top: 10px;
+  right: 525px;
+  font-size: 20px;
+  color: gray;
+}
+
+.essay-message .essay-date {
+  position: absolute;
+  top: 10px;
+  right: 420px;
+  font-size: 14px;
+  color: gray;
+}
+
+.essay-message .icon-icon- {
+  position: absolute;
+  top: 10px;
+  right: 355px;
+  font-size: 20px;
+  color: gray;
+}
+
+.essay-message .essay-through {
+  position: absolute;
+  top: 10px;
+  right: 270px;
+  font-size: 14px;
+  color: gray;
+}
+
+/* text */
+.essay-text {
+  position: absolute;
+  top: 100px;
+  width: 860px;
+  /* border: 1px solid black; */
+}
+
+.essay-text p {
+  margin: 10px;
+  text-indent: 2em;
+  font-size: 14px;
+  color: #724249;
+  font-weight: bold;
+}
+
+.essay-text .guqing {
+  position: relative;
+  width: 400px;
+  height: 600px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.essay-text .guzheng {
+  width: 600px;
+  height: 400px;
+}
+
+.essay-text .box-bottom {
+  position: absolute;
+  top: 4310px;
+  width: 100%;
+  height: 5px;
+  background-color: #e395a1;
+  border-radius: 5px;
+}
+
+.essay-text .essay-button {
+  position: absolute;
+  top: 4330px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  width: 140px;
+  height: 45px;
+  /* background-color: #e395a1; */
+  transition: all .5s;
+  background-image: url(../images/点赞.png);
+  background-repeat: no-repeat;
+}
+
+.essay-text .essay-button:hover {
+  cursor: pointer;
+  /* background-color: #e07f8d; */
+}
